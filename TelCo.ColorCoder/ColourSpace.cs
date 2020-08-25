@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
@@ -28,12 +28,12 @@ namespace TelCo.ColorCoder
             colorMapMinor = new Color[] { Color.Blue, Color.Orange, Color.Green, Color.Brown, Color.SlateGray };
         }
 
-        public Color[] getColorMapMajor()
+        public static Color[] getColorMapMajor()
         {
             return colorMapMajor;
         }
 
-        public Color[] getColorMapMinor()
+        public static Color[] getColorMapMinor()
         {
             return colorMapMinor;
         }
