@@ -6,18 +6,13 @@ namespace TelCo.ColorCoder
 {
     class ColorCodingColorPair
     {
-        private ColourSpace space;
-        public ColorCodingColorPair()
-        {
-            space = new ColourSpace();
-        }
-
-        public int GetPairNumberFromColor(ColorPair pair)
+       
+        public static int GetPairNumberFromColor(ColorPair pair)
         {
             int majorIndex = -1;
-            for (int i = 0; i < space.getColorMapMajor().Length; i++)
+            for (int i = 0; i < ColourSpace.getColorMapMajor().Length; i++)
             {
-                if ((Color)space.getColorMapMajor().GetValue(i) == pair.majorColor)
+                if ((Color)ColourSpace.getColorMapMajor().GetValue(i) == pair.majorColor)
                 {
                     majorIndex = i;
                     break;
@@ -25,9 +20,9 @@ namespace TelCo.ColorCoder
             }
 
             int minorIndex = -1;
-            for (int i = 0; i < space.getColorMapMinor().Length; i++)
+            for (int i = 0; i < ColourSpace.getColorMapMinor().Length; i++)
             {
-                if ((Color)space.getColorMapMinor().GetValue(i) == pair.minorColor)
+                if ((Color)ColourSpace.getColorMapMinor().GetValue(i) == pair.minorColor)
                 {
                     minorIndex = i;
                     break;
@@ -40,7 +35,7 @@ namespace TelCo.ColorCoder
             }
 
             
-            return (majorIndex * space.getColorMapMinor().Length) + (minorIndex + 1);
+            return (majorIndex * ColourSpace.getColorMapMinor().Length) + (minorIndex + 1);
         }
     }
 }
