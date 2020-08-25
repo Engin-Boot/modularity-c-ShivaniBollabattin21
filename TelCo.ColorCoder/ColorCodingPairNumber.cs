@@ -8,16 +8,11 @@ namespace TelCo.ColorCoder
 {
     class ColorCodingPairNumber
     {
-        private ColourSpace space;
-        public ColorCodingPairNumber()
+      
+        public static ColorPair GetColorFromPairNumber(int pairNumber)
         {
-            space = new ColourSpace();
-        }
-
-        public  ColorPair GetColorFromPairNumber(int pairNumber)
-        {
-            int minorSize = space.getColorMapMinor().Length;
-            int majorSize = space.getColorMapMajor().Length;
+            int minorSize = ColourSpace.getColorMapMinor().Length;
+            int majorSize =ColourSpace.getColorMapMajor().Length;
             if (pairNumber < 1 || pairNumber > minorSize * majorSize)
             {
                 throw new ArgumentOutOfRangeException(
@@ -29,8 +24,8 @@ namespace TelCo.ColorCoder
             int minorIndex = zeroBasedPairNumber % minorSize;
             ColorPair pair = new ColorPair()
             {
-                majorColor = (Color)space.getColorMapMajor().GetValue(majorIndex),
-                minorColor = (Color)space.getColorMapMinor().GetValue(minorIndex)
+                majorColor =(Color)ColourSpace.getColorMapMajor().GetValue(majorIndex),
+                minorColor = (Color)ColourSpace.getColorMapMinor().GetValue(minorIndex)
             };
 
             return pair;
