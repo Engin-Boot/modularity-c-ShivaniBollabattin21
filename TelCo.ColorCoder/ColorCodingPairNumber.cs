@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using static TelCo.ColorCoder.ColourSpace;
 using System.Text;
@@ -8,7 +8,7 @@ namespace TelCo.ColorCoder
 {
     class ColorCodingPairNumber
     {
-        private static ColourSpace space;
+        private ColourSpace space;
         public ColorCodingPairNumber()
         {
             space = new ColourSpace();
@@ -30,7 +30,7 @@ namespace TelCo.ColorCoder
             ColorPair pair = new ColorPair()
             {
                 majorColor = (Color)space.getColorMapMajor().GetValue(majorIndex),
-                minorColor = (Color)space.getColorMapMajor().GetValue(majorIndex)
+                minorColor = (Color)space.getColorMapMinor().GetValue(minorIndex)
             };
 
             return pair;
