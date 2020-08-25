@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using static TelCo.ColorCoder.ColourSpace;
 using System.Drawing;
 
@@ -6,7 +6,7 @@ namespace TelCo.ColorCoder
 {
     class ColorCodingColorPair
     {
-        private static ColourSpace space;
+        private ColourSpace space;
         public ColorCodingColorPair()
         {
             space = new ColourSpace();
