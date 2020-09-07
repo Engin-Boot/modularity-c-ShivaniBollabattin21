@@ -7,9 +7,9 @@ namespace TelCo.ColorCoder
     class ColorCodingColorPair
     {
 
-        public static int _checkColor(Color[] colorArray, Color _color)
+        public static int CheckColorandReturnIndex(Color[] colorArray, Color _color)
         {
-            int index = 0;
+            int index = -1;
             for (int i = 0; i < colorArray.Length; i++)
             {
                 if ((Color)colorArray.GetValue(i) == _color)
