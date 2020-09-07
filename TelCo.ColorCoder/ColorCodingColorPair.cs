@@ -24,9 +24,9 @@ namespace TelCo.ColorCoder
         public static int GetPairNumberFromColor(ColorPair pair)
         {
             int majorIndex = -1;
-            majorIndex = _checkColor(ColourSpace.getColorMapMajor(), pair.majorColor);
+            majorIndex = CheckColorandReturnIndex(ColourSpace.getColorMapMajor(), pair.majorColor);
             int minorIndex = -1;
-            minorIndex = _checkColor(ColourSpace.getColorMapMinor(), pair.minorColor);
+            minorIndex = CheckColorandReturnIndex(ColourSpace.getColorMapMinor(), pair.minorColor);
             if (majorIndex == -1 || minorIndex == -1)
             {
                 throw new ArgumentException(
